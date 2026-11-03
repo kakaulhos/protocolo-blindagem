@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Protocolo Blindagem</title>
+<meta name="description" content="Protocolo Blindagem: o passo a passo de 4 etapas pra sair da difamação e da exclusão com a cabeça erguida.">
+<meta name="theme-color" content="#170F13">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '28773863172247097');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=28773863172247097&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: coluna única estreita (leitura em celular, tráfego frio), faixas alternadas escuro/escuro-2,
+   blocos curtos em cards, uma ação por faixa. Identidade herdada da página Amiga da Onça v2. */
+:root{
+  --bg:#170F13; --bg-2:#1E1319; --card:#241820; --card-2:#2C1D26;
+  --rose:#F0708F; --rose-dim:#D95A78; --rose-bg:rgba(240,112,143,.12); --rose-line:rgba(240,112,143,.32);
+  --cream:#F3ECE4; --ink:#2B0F18; --muted:#B7A79E; --line:rgba(243,236,228,.10);
+  --white:#FBF8F5; --white-2:#EFE9E2; --no:#D9877F; --no-bg:rgba(217,135,127,.10);
+  --font-display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --font-ui:'Inter','Segoe UI',system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--cream);font-family:var(--font-ui);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:var(--card)}
+a{color:inherit}
+img{max-width:100%;display:block}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:44px;border-top:1px solid var(--line)}
+.band.alt{background:var(--bg-2)}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--rose);margin-bottom:10px}
+h1,h2,h3{font-family:var(--font-display);color:var(--white);text-wrap:balance}
+h2{font-weight:700;font-size:clamp(25px,6.4vw,34px);line-height:1.16;letter-spacing:-.015em;margin-bottom:14px}
+p{color:var(--muted)}
+.lead{font-size:16.5px;color:var(--white-2);margin-bottom:6px}
+.center{text-align:center}
+em.r{font-style:normal;color:var(--rose)}
+
+
+/* barra do topo */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:var(--card);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;justify-content:center;align-items:center;gap:10px;padding-block:9px;font-size:12.5px;font-weight:600;color:var(--white-2);text-align:center}
+.topbar .dot{width:6px;height:6px;border-radius:50%;background:var(--rose);flex:0 0 auto;animation:pulse 1.6s ease-in-out infinite}
+.topbar b{color:var(--rose);font-variant-numeric:tabular-nums}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* hero */
+.hero{padding-block:34px 40px;border-top:none;background:radial-gradient(120% 60% at 50% 0%,rgba(240,112,143,.14) 0%,rgba(23,15,19,0) 70%),var(--bg)}
+.hero.band{padding-top:0}
+.hphoto{position:relative;max-width:640px;margin:0 auto;overflow:hidden}
+.hphoto img{width:100%;height:auto;aspect-ratio:860/790;display:block}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(23,15,19,.35) 0%,rgba(23,15,19,0) 14%,rgba(23,15,19,0) 45%,rgba(23,15,19,.75) 78%,var(--bg) 100%),linear-gradient(to right,var(--bg) 0%,rgba(23,15,19,0) 12%,rgba(23,15,19,0) 88%,var(--bg) 100%)}
+@media (min-width:700px){.hphoto{max-width:480px;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 76%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,#000 24%,#000 76%,transparent 100%)}.hphoto::after{background:linear-gradient(to bottom,rgba(23,15,19,.35) 0%,rgba(23,15,19,0) 14%,rgba(23,15,19,0) 45%,rgba(23,15,19,.75) 78%,var(--bg) 100%),linear-gradient(to right,var(--bg) 0%,rgba(23,15,19,0) 22%,rgba(23,15,19,0) 78%,var(--bg) 100%)}}
+.hero .hwrap{position:relative;margin-top:-58px;z-index:2}
+.devs{position:relative;aspect-ratio:16/8.4;margin:6px auto 8px;max-width:600px}
+.devs .glow{position:absolute;left:50%;top:46%;width:70%;height:70%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(240,112,143,.28),rgba(240,112,143,0));pointer-events:none}
+.dv{position:absolute;background:#0d0a0c;box-shadow:0 18px 40px rgba(0,0,0,.55);overflow:hidden}
+.dv img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.dv.tab img,.dv.ph img{height:auto;background:#FBF7F2}
+.dv.tab,.dv.ph{background:#FBF7F2}
+.dv.ph img{width:175%;max-width:none;margin-top:12%}
+.dv.tab{left:2%;top:4%;width:30%;aspect-ratio:3/4;border-radius:5%/4%;border:4px solid #3a3036;padding:0}
+.dv.lap{left:20%;top:12%;width:60%;aspect-ratio:16/10;border-radius:3%/4.5%;border:5px solid #2e262b;border-bottom-width:6px}
+.lapbase{position:absolute;left:15%;width:70%;top:84%;height:3.2%;background:linear-gradient(#5a5157,#2a2327);border-radius:0 0 12px 12px/0 0 6px 6px}
+.dv.ph{right:3%;top:20%;width:17%;aspect-ratio:9/19;border-radius:14%/7%;border:3px solid #3a3036}
+.dv.ph::before{content:"";position:absolute;top:2.5%;left:50%;transform:translateX(-50%);width:34%;height:2.4%;background:#0d0a0c;border-radius:9px;z-index:2}
+.player{position:absolute;left:4%;right:4%;bottom:6%;display:flex;align-items:center;gap:6px;background:rgba(23,15,19,.78);border-radius:6px;padding:4px 7px;font-size:clamp(6px,1.5vw,9px);color:#EFE9E2;font-variant-numeric:tabular-nums}
+.player .bar{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.25);position:relative}
+.player .bar::after{content:"";position:absolute;left:0;top:0;bottom:0;width:38%;background:var(--rose);border-radius:3px}
+.player svg{width:9px;height:9px;fill:#fff;flex:0 0 auto}
+.play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:15%;aspect-ratio:1;border-radius:50%;background:rgba(240,112,143,.92);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.play svg{width:40%;height:40%;fill:#fff;margin-left:8%}
+.fmts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 22px;text-align:center}
+.fmts div{font-size:13px;line-height:1.35;color:var(--white-2)}
+.fmts b{display:block;color:var(--white);font-size:13.5px;margin-bottom:2px}
+@media (max-width:420px){.fmts{gap:6px}.fmts div{font-size:12px}.fmts b{font-size:12.5px}}
+.hero h1{font-weight:800;font-size:clamp(29px,8vw,43px);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--rose)}
+.hero .sub{font-size:17px;color:var(--white-2);margin-bottom:22px}
+.hero .sub b{color:var(--white)}
+.mesmoque{display:grid;gap:8px;margin-bottom:26px}
+.mesmoque div{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;color:var(--white-2)}
+.mesmoque .ck{width:22px;height:22px;border-radius:7px;background:var(--rose-bg);display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:13px;margin-top:1px;flex:0 0 auto}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(160deg,var(--rose) 0%,var(--rose-dim) 100%);color:var(--ink);font-family:var(--font-ui);font-weight:700;font-size:16.5px;letter-spacing:.01em;text-align:center;text-decoration:none;padding:18px 22px;border-radius:14px;border:none;cursor:pointer;box-shadow:0 12px 30px rgba(240,112,143,.28);transition:box-shadow .2s,transform .2s}
+.cta:hover{box-shadow:0 14px 36px rgba(240,112,143,.4);transform:translateY(-1px)}
+.cta:active{transform:scale(.98)}
+.cta:focus-visible,summary:focus-visible{outline:2px solid var(--white);outline-offset:3px}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-top:14px;font-size:12px;font-weight:600;color:var(--muted)}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+.trust svg{color:var(--rose);font-size:14px}
+
+/* cards de dor */
+.cards{display:grid;gap:10px;margin-top:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;min-width:0}
+.card .ic{width:40px;height:40px;border-radius:11px;background:var(--rose-bg);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:20px;flex:0 0 auto}
+.card h3{font-weight:600;font-size:16.5px;line-height:1.25;margin-bottom:3px}
+.card p{font-size:14.5px;line-height:1.45}
+.card > div{min-width:0}
+
+/* print real */
+.print{margin-top:22px}
+.print img{width:100%;border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.35);border:1px solid var(--line)}
+.print figcaption{font-size:12px;color:var(--muted);margin-top:9px;text-align:center}
+
+/* para voce / nao */
+.fit{display:grid;gap:12px;margin-top:6px}
+.fit .box{border-radius:18px;padding:20px 18px;border:1px solid var(--line);background:var(--card)}
+.fit .box.yes{border-color:var(--rose-line)}
+.fit h3{font-size:14px;font-family:var(--font-ui);font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px}
+.fit .yes h3{color:var(--rose)} .fit .not h3{color:var(--no)}
+.fit ul{list-style:none;display:grid;gap:12px}
+.fit li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--white-2);line-height:1.4}
+.fit li b{color:var(--white)}
+.fit li svg{margin-top:3px;font-size:16px}
+.fit .yes li svg{color:var(--rose)} .fit .not li svg{color:var(--no)}
+
+/* verdade */
+.verdade{background:linear-gradient(155deg,var(--card-2) 0%,var(--card) 100%);border:1px solid var(--rose-line);border-radius:22px;padding:30px 22px;text-align:center}
+.verdade .big{font-family:var(--font-display);font-weight:800;font-size:clamp(24px,6.6vw,34px);line-height:1.12;letter-spacing:-.015em;color:var(--white);text-transform:uppercase;text-wrap:balance}
+.verdade .big em{font-style:normal;color:var(--rose)}
+.verdade p{margin-top:16px;font-size:15.5px;color:var(--white-2)}
+
+/* roteiro */
+.steps{display:grid;gap:8px;margin-top:20px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}
+.step .tag{font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:.04em;color:var(--rose);grid-row:span 2;min-width:78px}
+.step q{font-style:italic;color:var(--white-2);font-size:15px;quotes:"“" "”"}
+.arrow{display:flex;justify-content:center;color:var(--rose);font-size:16px;opacity:.7}
+.mini{display:grid;gap:10px;margin-top:20px}
+.mini .card{padding:14px 16px}
+
+/* protocolo */
+.phases{display:grid;gap:0;margin-top:22px;position:relative}
+.phase{display:grid;grid-template-columns:48px 1fr;gap:0 14px;padding-bottom:18px;position:relative}
+.phase:last-child{padding-bottom:0}
+.phase::before{content:"";position:absolute;left:23px;top:48px;bottom:-2px;width:2px;background:linear-gradient(var(--rose-line),rgba(240,112,143,.05))}
+.phase:last-child::before{display:none}
+.phase .n{width:48px;height:48px;border-radius:14px;background:var(--rose);color:var(--ink);font-family:var(--font-display);font-weight:800;font-size:23px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(240,112,143,.25)}
+.phase .t{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;min-width:0}
+.phase h3{font-size:19px;letter-spacing:.02em;color:var(--rose);margin-bottom:3px;text-transform:uppercase;font-weight:800}
+.phase p{font-size:15px;color:var(--white-2);line-height:1.4}
+.strip{margin-top:22px;text-align:center;font-family:var(--font-display);font-weight:800;font-size:clamp(19px,5vw,24px);color:var(--white);text-transform:uppercase;letter-spacing:.01em;padding:18px 14px;border-radius:16px;background:var(--rose-bg);border:1px solid var(--rose-line)}
+.small{font-size:14.5px;margin-top:16px;color:var(--muted)}
+
+/* dominar */
+.grid2{display:grid;gap:10px;margin-top:18px;grid-template-columns:1fr}
+.dom{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 16px;min-width:0}
+.dom .ic{width:36px;height:36px;border-radius:10px;background:var(--rose-bg);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px}
+.dom h3{font-size:16px;font-weight:600;line-height:1.25;margin-bottom:4px}
+.dom p{font-size:14px;line-height:1.4}
+
+/* bio */
+.bio{display:grid;gap:18px;justify-items:center;text-align:center}
+.bio .photo{width:150px;border-radius:20px;overflow:hidden;position:relative;box-shadow:0 14px 34px rgba(0,0,0,.4);border:1px solid var(--rose-line)}
+.bio .photo{aspect-ratio:235/266}
+.bio .photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.04)}
+.bio h2{margin-bottom:2px}
+.bio .role{color:var(--rose);font-size:14px;font-weight:600}
+.bio p.t{color:var(--white-2);font-size:16px;text-align:left}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 6px;min-width:0}
+.stat b{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(17px,4.6vw,22px);color:var(--rose);line-height:1.1}
+.stat span{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.25}
+
+/* espiada */
+.row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;margin-top:16px;-webkit-overflow-scrolling:touch}
+.row > *{scroll-snap-align:center;flex:0 0 78%;max-width:300px;min-width:0}
+.peek{background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:18px;padding:16px;min-height:228px;display:flex;flex-direction:column;gap:10px}
+.peek .lab{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rose)}
+.peek h3{font-size:17px;line-height:1.2}
+.flow{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.flow span{font-size:11px;font-weight:700;letter-spacing:.05em;padding:6px 8px;border-radius:8px;background:var(--rose-bg);color:var(--rose)}
+.flow svg{color:var(--muted);font-size:12px}
+.bubble{background:var(--rose-bg);border:1px solid var(--rose-line);border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:14px;color:var(--white);font-style:italic;line-height:1.4}
+.chk{list-style:none;display:grid;gap:8px}
+.chk li{display:flex;gap:9px;align-items:center;font-size:13.5px;color:var(--white-2)}
+.chk .b{width:18px;height:18px;border-radius:6px;border:1.5px solid var(--rose-line);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--rose);flex:0 0 auto}
+.chk .b.on{background:var(--rose);border-color:var(--rose);color:var(--ink)}
+.peekfoot{font-size:12px;color:var(--muted);margin-top:auto}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:2px}
+
+
+/* por dentro */
+.tabs{display:flex;gap:4px;margin-top:18px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 1 0;min-width:0;justify-content:center;font:600 12px var(--font-ui);padding:10px 6px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:7px}
+.tab b{font-family:var(--font-display);color:var(--rose)}
+.tab[aria-selected=true]{background:var(--rose);color:var(--ink);border-color:var(--rose)}
+.tab[aria-selected=true] b{color:var(--ink)}
+.tab:focus-visible{outline:2px solid var(--white);outline-offset:2px}
+.panel{margin-top:14px}
+.panel[hidden]{display:none}
+.panel > p.pl{font-size:15px;color:var(--white-2);margin-bottom:12px}
+.mock{background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--rose-line);border-radius:20px;padding:18px;display:grid;gap:12px;box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.mock + .mock{margin-top:10px}
+.mock .lab{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rose)}
+.mock h3{font-size:18px;line-height:1.2}
+.mock p.s{font-size:14px;color:var(--white-2);line-height:1.45}
+.mock .who{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.q3{display:grid;gap:7px}
+.q3 div{display:flex;gap:10px;align-items:center;background:var(--rose-bg);border:1px solid var(--rose-line);border-radius:12px;padding:10px 12px;font-size:14px;color:var(--white);font-style:italic}
+.q3 div span{font-style:normal;font-family:var(--font-display);font-weight:800;font-size:11px;letter-spacing:.06em;color:var(--rose);min-width:56px}
+.diary{display:grid;gap:8px}
+.diary div{background:var(--bg);border:1px dashed var(--rose-line);border-radius:12px;padding:10px 12px;font-size:13.5px;color:var(--muted)}
+.diary div b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rose);margin-bottom:2px}
+
+
+.shots{display:grid;gap:14px}
+.shot{background:var(--card);border:1px solid var(--rose-line);border-radius:18px;padding:8px;box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.shot img{width:100%;height:auto;border-radius:12px}
+.shot figcaption{font-size:12.5px;color:var(--muted);text-align:center;padding:9px 4px 3px}
+@media (min-width:560px){.shots{grid-template-columns:1fr 1fr;align-items:start}}
+
+/* pilha de valor */
+.cover{width:132px;aspect-ratio:3/4;border-radius:10px 14px 14px 10px;background:linear-gradient(160deg,#3A1A26 0%,#241820 55%,#170F13 100%);border:1px solid var(--rose-line);box-shadow:-6px 0 0 rgba(240,112,143,.18),0 20px 40px rgba(0,0,0,.5);padding:14px 12px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;flex:0 0 auto}
+.cover::after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,rgba(240,112,143,.35),transparent 70%)}
+.cover .sh{font-size:34px;color:var(--rose)}
+.cover .sh svg{stroke-width:1.6}
+.cover b{font-family:var(--font-display);font-weight:800;font-size:15px;line-height:1.05;color:var(--white);text-transform:uppercase;letter-spacing:.01em;display:block;position:relative;z-index:1}
+.cover small{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);position:relative;z-index:1}
+.stackhead{display:flex;gap:18px;align-items:center;margin-bottom:18px}
+.stackhead p{font-size:14.5px}
+.stack{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.srow{display:flex;gap:12px;align-items:center;padding:15px 16px;border-bottom:1px solid var(--line)}
+.srow:last-of-type{border-bottom:none}
+.srow .ic{width:34px;height:34px;border-radius:10px;background:var(--rose-bg);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:17px;flex:0 0 auto}
+.srow .tx{flex:1;min-width:0}
+.srow .tx b{display:block;font-family:var(--font-display);font-weight:600;font-size:15.5px;color:var(--white);line-height:1.25}
+.srow .tx span{font-size:12.5px;color:var(--muted)}
+.srow .v{font-variant-numeric:tabular-nums;font-weight:600;font-size:14px;color:var(--white-2);white-space:nowrap;text-align:right}
+.srow .tx b .bonus{display:inline-block;font-family:var(--font-ui);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--rose);padding:2px 7px;border-radius:6px;margin-right:6px;vertical-align:2px;line-height:1.3}
+.stackhead .cover{margin-left:6px}
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin:-8px 0 22px}
+.facts span{font-size:12.5px;font-weight:600;color:var(--white);background:var(--rose-bg);border:1px solid var(--rose-line);padding:6px 10px;border-radius:999px}
+.stacklead{font-size:15.5px;color:var(--white-2);margin:-4px 0 16px}
+.stackgroup{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);padding:14px 16px 6px;background:var(--bg-2);border-bottom:1px solid var(--line)}
+.srow{align-items:flex-start}
+.srow .ic,.srow .v{margin-top:2px}
+.srow .tx span.d{display:block;font-size:13px;color:var(--white-2);line-height:1.4;margin-top:3px}
+.srow .tx span.why{display:block;font-size:12px;color:var(--rose);margin-top:5px;font-style:italic}
+.srow .th{width:46px;height:58px;border-radius:6px;object-fit:cover;object-position:top;border:1px solid var(--rose-line);flex:0 0 auto;background:var(--white)}
+.offer li b{color:var(--white)}
+.gstack{display:grid;gap:12px}
+.garantia .tag2{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);margin-bottom:4px}
+.proofh{font-size:18px;font-weight:700;margin-top:28px}
+.facts.inside{margin:4px 0 12px}
+.shots.one{grid-template-columns:1fr!important;max-width:420px;margin:0 auto}
+.panel .pl .inc{display:block;font-size:12.5px;font-weight:600;color:var(--rose);margin-top:4px}
+.offer2{background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--rose-line);border-radius:22px;padding:18px 18px 20px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.olist{list-style:none;display:grid}
+.olist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--white);line-height:1.3}
+.olist li:first-child{padding-top:2px;font-weight:600;font-size:15.5px}
+.olist li small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:2px}
+.olist li em{font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--rose);padding:2px 6px;border-radius:5px;margin-right:7px;vertical-align:1px}
+.olist s,.ototal s{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:13.5px}
+.ototal{display:flex;justify-content:space-between;padding:10px 0 2px;font-weight:600;color:var(--white-2);font-size:14.5px}
+.ototal s{font-size:15px}
+.onow{text-align:center;margin-top:12px;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rose)}
+.oprice{text-align:center;font-family:var(--font-display);font-weight:800;font-size:clamp(42px,12vw,56px);line-height:1;color:var(--white);margin:6px 0 4px;letter-spacing:-.02em}
+.ocmp{text-align:center;font-size:13px;color:var(--muted);margin-bottom:14px}
+.stotal{display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--rose-bg);border-top:1px solid var(--rose-line);font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--white)}
+
+/* depoimentos */
+.row.prints{display:grid;gap:12px;overflow:visible;scroll-snap-type:none;padding:0;margin-top:18px}
+.row.prints > *{max-width:none}
+.prints > figure{background:var(--card);border-radius:14px;padding:6px;border:1px solid var(--line)}
+.prints img{border-radius:10px;width:100%;height:auto}
+.hint{font-size:12px;color:var(--muted);text-align:center}
+
+
+/* carrossel */
+.car{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:18px;padding:2px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.car::-webkit-scrollbar{display:none}
+.car figure{flex:0 0 84%;max-width:360px;scroll-snap-align:center;background:var(--white);border-radius:16px;padding:6px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+.car img{width:100%;border-radius:12px;max-height:440px;object-fit:contain}
+.cardots{display:flex;justify-content:center;gap:6px;margin:4px 0 10px}
+.cardots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.2s}
+.cardots i.on{background:var(--rose);width:18px;border-radius:4px}
+
+/* oferta */
+.offer{background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--rose-line);border-radius:24px;padding:28px 20px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.offer .cover{margin:0 auto 20px}
+.offer .was{font-size:15px;color:var(--muted);text-decoration:line-through}
+.offer .por{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);margin-top:8px}
+.offer .price{font-family:var(--font-display);font-weight:800;font-size:clamp(40px,12vw,58px);line-height:1;color:var(--white);margin:8px 0 6px;letter-spacing:-.02em}
+.offer .inst{font-size:14.5px;color:var(--white-2);margin-bottom:6px}
+.offer .cmp{font-size:13.5px;color:var(--muted);margin-bottom:20px}
+.offer .cta{margin-top:6px}
+.offer ul{list-style:none;text-align:left;display:grid;gap:9px;margin:20px 0 22px}
+.offer li{display:flex;gap:10px;font-size:14.5px;color:var(--white-2);align-items:flex-start}
+.offer li svg{color:var(--rose);margin-top:4px;font-size:14px}
+
+/* garantia */
+.garantia{display:flex;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 20px}
+.seal{width:84px;height:84px;flex:0 0 auto}
+.garantia h3{font-size:19px;margin-bottom:4px}
+.garantia p{font-size:14.5px;color:var(--white-2)}
+
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:8px}
+summary{list-style:none;cursor:pointer;padding:16px 46px 16px 16px;font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--white);position:relative;line-height:1.3}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--rose);font-family:var(--font-ui);font-weight:500}
+details[open] summary::after{content:"–"}
+details p{padding:0 16px 16px;font-size:14.5px;color:var(--white-2)}
+
+/* decisao */
+.decisao ul{list-style:none;display:grid;gap:10px;margin:16px 0 22px}
+.decisao li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--white-2);background:var(--no-bg);border:1px solid rgba(217,135,127,.22);border-radius:14px;padding:14px 16px}
+.decisao li svg{color:var(--no);margin-top:4px;font-size:15px}
+.decisao .big{font-family:var(--font-display);font-weight:800;font-size:clamp(23px,6.4vw,32px);line-height:1.15;color:var(--white);margin-bottom:20px;letter-spacing:-.015em}
+.ps{margin-top:18px;font-size:14px;color:var(--muted);text-align:left;padding:16px 18px;background:var(--card);border-radius:14px;border:1px solid var(--line)}
+.ps b{color:var(--white-2)}
+
+footer{padding:34px 0 120px;border-top:1px solid var(--line);text-align:center}
+footer p{font-size:12px;color:var(--muted);opacity:.8;margin-bottom:8px}
+footer .cvv{max-width:44ch;margin:12px auto 0}
+
+/* sticky cta */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--card);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));transform:translateY(115%);transition:transform .25s ease}
+.sticky.show{transform:translateY(0)}
+.sticky .in{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.sticky .in div{flex:1;min-width:0;font-size:12px;color:var(--muted);line-height:1.25}
+.sticky .in div b{display:block;font-family:var(--font-display);font-size:15px;color:var(--white)}
+.sticky .cta{width:auto;padding:13px 20px;font-size:14.5px;white-space:nowrap}
+
+@media (min-width:560px){
+  .grid2{grid-template-columns:1fr 1fr}
+  .fit{grid-template-columns:1fr 1fr}
+  .row > *{flex-basis:46%}
+  .band{padding-block:56px}
+}
+@media (prefers-reduced-motion:reduce){.topbar .dot{animation:none}html{scroll-behavior:auto}.sticky{transition:none}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></symbol>
+  </defs>
+</svg>
+
+<!-- BARRA DO TOPO -->
+<div class="topbar"><div class="wrap"><span class="dot"></span><span>30 dias · 10 min por dia · Garantia de 7 dias</span></div></div>
+
+<!-- HERO -->
+<header class="band hero"><div class="hphoto"><img src="img/img01.jpg" alt="Ana Carolina Lira" width="860" height="790" fetchpriority="high"></div><div class="wrap hwrap">
+  <h1>Difamaram e te excluíram? Se defenda sem virar a vilã da história e <em>recupere a sua paz.</em></h1>
+  <p class="sub"><b>Protocolo Blindagem:</b> o passo a passo de 4 etapas pra sair dessa com a cabeça erguida.</p>
+  <div class="mesmoque">
+    <div><span class="ck"><svg class="i"><use href="#i-check"/></svg></span>Mesmo que a mentira já tenha se espalhado.</div>
+    <div><span class="ck"><svg class="i"><use href="#i-check"/></svg></span>Mesmo que todo mundo tenha ficado em silêncio.</div>
+    <div><span class="ck"><svg class="i"><use href="#i-check"/></svg></span>Mesmo que seja no trabalho, na família ou na escola do seu filho.</div>
+  </div>
+  <div class="facts"><span>30 dias, 4 etapas</span><span>10 minutos por dia</span><span>É preencher e usar</span></div>
+  <a class="cta" data-cta href="#oferta">QUERO ME BLINDAR</a>
+  <div class="trust">
+    <span><svg class="i"><use href="#i-lock"/></svg>Compra segura</span>
+    <span><svg class="i"><use href="#i-zap"/></svg>Acesso imediato</span>
+    <span><svg class="i"><use href="#i-shield"/></svg>Garantia de 7 dias</span>
+  </div>
+</div></header>
+
+<!-- PARE DE SE CULPAR -->
+<section class="band alt"><div class="wrap">
+  <div class="eyebrow">Pare de se culpar</div>
+  <h2>Quanto mais você tenta se defender, mais fundo afunda.</h2>
+  <div class="cards">
+    <div class="card"><span class="ic"><svg class="i"><use href="#i-msg"/></svg></span><div><h3>Você se explica e piora</h3><p>Cada defesa vira munição.</p></div></div>
+    <div class="card"><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span><div><h3>A versão deles chegou primeiro</h3><p>Quando você abriu a boca, a história já estava contada.</p></div></div>
+    <div class="card"><span class="ic"><svg class="i"><use href="#i-mute"/></svg></span><div><h3>Ninguém falou nada</h3><p>Quem viu tudo escolheu o silêncio.</p></div></div>
+    <div class="card"><span class="ic"><svg class="i"><use href="#i-repeat"/></svg></span><div><h3>O roteiro te segue</h3><p>Muda o grupo, o trabalho, a igreja. O roteiro é o mesmo.</p></div></div>
+    <div class="card"><span class="ic"><svg class="i"><use href="#i-help"/></svg></span><div><h3>Você duvida de você</h3><p>Já passou, mas você remói e confia menos em todo mundo.</p></div></div>
+    <div class="card"><span class="ic"><svg class="i"><use href="#i-lock"/></svg></span><div><h3>Você não pode simplesmente sair</h3><p>É o trabalho, a família, a escola do seu filho.</p></div></div>
+  </div>
+  <h3 class="proofh">O que dizem as mulheres que me acompanham</h3>
+  <div class="car" id="car" tabindex="0" aria-label="Depoimentos reais, deslize para o lado">
+    <figure><img src="img/img02.jpg" alt="Comentário de Juliana Batista no Instagram" width="590" height="227"></figure>
+    <figure><img src="img/img03.jpg" alt="Mensagem de uma membra da comunidade no WhatsApp"></figure>
+    <figure><img src="img/img04.jpg" alt="Mensagem de uma membra da comunidade no WhatsApp"></figure>
+    <figure><img src="img/img05.jpg" alt="Mensagens de membras da comunidade no WhatsApp"></figure>
+    <figure><img src="img/img06.jpg" alt="Mensagem de uma membra da comunidade no WhatsApp"></figure>
+    <figure><img src="img/img07.jpg" alt="Comentário real no Instagram"></figure>
+    <figure><img src="img/img08.jpg" alt="Comentário real no Instagram"></figure>
+    <figure><img src="img/img09.jpg" alt="Comentário real no Instagram"></figure>
+  </div>
+  <div class="cardots" id="cardots" aria-hidden="true"></div>
+  <p class="hint">Mensagens reais do grupo no WhatsApp e do Instagram. Deslize para ver mais.</p>
+</div></section>
+
+<!-- PARA VOCE / NAO PARA VOCE -->
+<section class="band"><div class="wrap">
+  <div class="fit">
+    <div class="box yes">
+      <h3>Isso é para você se...</h3>
+      <ul>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Foi difamada, excluída ou virou a vilã</b> de uma história que nem escreveu.</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Já tentou de tudo:</b> se explicar, se afastar, rezar, desabafar.</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Quer um passo a passo,</b> não mais um desabafo.</span></li>
+      </ul>
+    </div>
+    <div class="box not">
+      <h3>Isso NÃO é para você se...</h3>
+      <ul>
+        <li><svg class="i"><use href="#i-x"/></svg><span><b>Espera que a pessoa admita</b> o que fez. O Protocolo não depende dela.</span></li>
+        <li><svg class="i"><use href="#i-x"/></svg><span><b>Quer leitura passiva.</b> Aqui é protocolo de aplicação.</span></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- A VERDADE QUE LIBERTA -->
+<section class="band alt"><div class="wrap">
+  <div class="verdade">
+    <div class="eyebrow">A verdade que liberta</div>
+    <div class="big">Reconhecer o padrão é o <em>primeiro passo.</em> O difícil é o que vem depois.</div>
+    <p>Você não precisa que ela mude, admita ou descubra a verdade. Precisa de um método.</p>
+  </div>
+</div></section>
+
+<!-- POR QUE VOCE AINDA NAO SUPEROU -->
+<section class="band"><div class="wrap">
+  <div class="eyebrow">Por que você ainda não superou</div>
+  <h2>Não é fraqueza. É o roteiro.</h2>
+  <p class="lead">Descrito pela psicóloga Jennifer Freyd (Universidade de Oregon), ele segue sempre a mesma ordem:</p>
+  <div class="steps">
+    <div class="step"><span class="tag">NEGA</span><q>Eu nunca disse isso.</q></div>
+    <div class="arrow"><svg class="i"><use href="#i-down"/></svg></div>
+    <div class="step"><span class="tag">ATACA</span><q>Você é sensível demais.</q></div>
+    <div class="arrow"><svg class="i"><use href="#i-down"/></svg></div>
+    <div class="step"><span class="tag">INVERTE</span><q>Olha como fui tratada.</q></div>
+  </div>
+  <div class="mini">
+    <div class="card"><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span><div><h3>A mentira chega primeiro</h3><p>Você chega pra se explicar e já é tarde.</p></div></div>
+    <div class="card"><span class="ic"><svg class="i"><use href="#i-msg"/></svg></span><div><h3>Sua explicação vira munição</h3><p>Quanto mais se justifica, mais material a história ganha.</p></div></div>
+    <div class="card"><span class="ic"><svg class="i"><use href="#i-users"/></svg></span><div><h3>Todo mundo vai junto</h3><p>Quem comanda, quem obedece, quem sabe e se cala.</p></div></div>
+    <div class="card"><span class="ic"><svg class="i"><use href="#i-help"/></svg></span><div><h3>Você se culpa</h3><p>Um estudo de 2017, com Freyd entre as autoras, achou que quem passa por esse roteiro tende a se culpar mais.</p></div></div>
+  </div>
+</div></section>
+
+<!-- O PROTOCOLO -->
+<section class="band alt"><div class="wrap">
+  <div class="eyebrow">O Protocolo Blindagem</div>
+  <h2>4 etapas. Passo a passo. Resultado prático.</h2>
+  <div class="phases">
+    <div class="phase"><div class="n">1</div><div class="t"><h3>Entender</h3><p>Veja o roteiro inteiro e o papel de cada um.</p></div></div>
+    <div class="phase"><div class="n">2</div><div class="t"><h3>Proteger</h3><p>Responda sem alimentar o boato e registre tudo do jeito certo.</p></div></div>
+    <div class="phase"><div class="n">3</div><div class="t"><h3>Fortalecer</h3><p>Recupere a confiança em você.</p></div></div>
+    <div class="phase"><div class="n">4</div><div class="t"><h3>Blindar</h3><p>Separe vínculo real de drama e se proteja de quem você não pode afastar.</p></div></div>
+  </div>
+  <p class="small">Só entender não fecha a ferida. Só se afastar, o roteiro volta com outra pessoa. Por isso são 4 etapas, nessa ordem.</p>
+  <div class="strip">Não é teoria. É passo a passo.</div>
+</div></section>
+
+<!-- O QUE VOCE VAI DOMINAR -->
+<section class="band"><div class="wrap">
+  <div class="eyebrow">O que você vai dominar</div>
+  <h2>Ferramentas prontas pra usar já na próxima conversa.</h2>
+  <div class="grid2">
+    <div class="dom"><span class="ic"><svg class="i"><use href="#i-msg"/></svg></span><h3>A frase que corta o roteiro</h3><p>Responder sem dar munição.</p></div>
+    <div class="dom"><span class="ic"><svg class="i"><use href="#i-clip"/></svg></span><h3>O diário de ocorrências</h3><p>Registrar cada episódio em 5 minutos, e saber quando é caso jurídico.</p></div>
+    <div class="dom"><span class="ic"><svg class="i"><use href="#i-users"/></svg></span><h3>O detector de vínculo real</h3><p>Amiga de verdade ou curiosa de drama.</p></div>
+    <div class="dom"><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span><h3>As frases-escudo</h3><p>O que dizer a mãe, chefe, sócia, cunhada, grupo de mães.</p></div>
+    <div class="dom"><span class="ic"><svg class="i"><use href="#i-book"/></svg></span><h3>O diário Fato × Narrativa</h3><p>Separar o que aconteceu da história que contaram, e voltar a confiar em você.</p></div>
+    <div class="dom"><span class="ic"><svg class="i"><use href="#i-map"/></svg></span><h3>O mapa do roteiro</h3><p>Reconhecer cada fase quando ela começa.</p></div>
+  </div>
+</div></section>
+
+<!-- QUEM VAI TE GUIAR -->
+<section class="band alt"><div class="wrap">
+  <div class="bio">
+    <div class="eyebrow" style="margin:0">Quem vai te guiar</div>
+    <div class="photo"><img src="img/img10.png" alt="Ana Carolina Lira"></div>
+    <div><h2>Ana Carolina Lira</h2><div class="role">Criadora do Protocolo Blindagem</div></div>
+    <p class="t">Eu já fui a vilã da história de outra pessoa. Em Cascais, em Portugal, uma mentira sobre mim se espalhou entre as mães do grupo e fui excluída por algo que nunca fiz. Ninguém quis ouvir a minha versão, e a história chegou antes de mim. Estudei até superar e hoje ajudo outras mulheres a sair desse ciclo.</p>
+    <div class="stats">
+      <div class="stat"><b>+350 mil</b><span>me acompanham no Instagram</span></div>
+      <div class="stat"><b>Milhares</b><span>de mensagens lidas</span></div>
+      <div class="stat"><b>Dezenas</b><span>de mulheres ajudadas a sair do ciclo</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- POR DENTRO -->
+<section class="band"><div class="wrap">
+  <div class="eyebrow">Por dentro</div>
+  <h2>Veja o Protocolo por dentro.</h2>
+  <p class="lead">Não são só páginas pra preencher. São aulas em vídeo com a Ana, vídeos curtos que explicam cada conceito, histórias reais e cadernos pra aplicar no seu caso.</p>
+  <div class="devs" aria-hidden="true">
+    <div class="glow"></div>
+    <div class="dv tab"><img data-from="#pn1 img" alt=""></div>
+    <div class="dv lap"><img src="img/img11.jpg" alt=""><div class="play"><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></div><div class="player"><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg><span>04:12</span><span class="bar"></span><span>09:30</span></div></div>
+    <div class="lapbase"></div>
+    <div class="dv ph"><img data-from="#pn2 img" alt=""></div>
+  </div>
+  <div class="fmts">
+    <div><b>Aulas em vídeo</b>com a Ana, em cada etapa</div>
+    <div><b>Vídeos curtos</b>que explicam cada conceito</div>
+    <div><b>Cadernos</b>pra preencher no celular ou no computador</div>
+  </div>
+  <p class="small" style="margin-top:0">Abaixo, uma página de exemplo de cada etapa.</p>
+  <div class="tabs" role="tablist" aria-label="Etapas do Protocolo">
+    <button class="tab" role="tab" aria-selected="true" aria-controls="pn1" id="tb1"><b>1</b>Entender</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="pn2" id="tb2"><b>2</b>Proteger</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="pn3" id="tb3"><b>3</b>Fortalecer</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="pn4" id="tb4"><b>4</b>Blindar</button>
+  </div>
+  <div class="panel" role="tabpanel" id="pn1" aria-labelledby="tb1">
+    <p class="pl">Você vê o roteiro inteiro e o papel de cada um na história.<span class="inc">Semana 1 · aula em vídeo · vídeo curto · caderno</span></p>
+    <div class="shots one"><figure class="shot"><img src="img/img12.jpg" alt="Página do Protocolo: mapa do meu roteiro, fase Nega"><figcaption>Mapa do meu roteiro</figcaption></figure></div>
+  </div>
+  <div class="panel" role="tabpanel" id="pn2" aria-labelledby="tb2" hidden>
+    <p class="pl">Você responde sem alimentar o boato e registra tudo do jeito certo.<span class="inc">Semana 2 · aula em vídeo · vídeo curto · caderno</span></p>
+    <div class="shots one"><figure class="shot"><img src="img/img13.jpg" alt="Página do Protocolo: minhas frases de saída"><figcaption>Minhas frases de saída</figcaption></figure></div>
+  </div>
+  <div class="panel" role="tabpanel" id="pn3" aria-labelledby="tb3" hidden>
+    <p class="pl">Você para de se culpar e recupera a confiança em você.<span class="inc">Semana 3 · aula em vídeo · vídeo curto · caderno</span></p>
+    <div class="shots one"><figure class="shot"><img src="img/img14.jpg" alt="Página do Protocolo: como a dúvida foi plantada"><figcaption>Como a dúvida foi plantada</figcaption></figure></div>
+  </div>
+  <div class="panel" role="tabpanel" id="pn4" aria-labelledby="tb4" hidden>
+    <p class="pl">Você separa vínculo real de drama e se protege de quem não pode afastar.<span class="inc">Semana 4 · aula em vídeo · vídeo curto · caderno</span></p>
+    <div class="shots one"><figure class="shot"><img src="img/img15.jpg" alt="Página do Protocolo: meus círculos de confiança"><figcaption>Meus círculos de confiança</figcaption></figure></div>
+  </div>
+</div></section>
+
+<!-- OFERTA -->
+<section class="band alt" id="oferta"><div class="wrap">
+  <div class="eyebrow">Tudo incluso</div>
+  <h2>O que você recebe hoje.</h2>
+  <p class="stacklead">Uma sessão de psicoterapia particular custa em média <b>R$ 200</b>. Uma consulta jurídica inicial, de <b>R$ 400 a R$ 800</b>. O Protocolo não substitui nenhuma das duas, mas te dá o passo a passo completo pra entender, se proteger, se fortalecer e se blindar.</p>
+  <div class="offer2">
+    <ul class="olist">
+      <li><span>Protocolo Blindagem: 30 dias, 4 etapas<small>9 aulas em vídeo, 5 vídeos curtos e cadernos pra preencher</small></span><s>R$ 197</s></li>
+      <li class=b><span><em>Bônus</em>36 frases-escudo para 6 vínculos</span><s>R$ 67</s></li>
+      <li class=b><span><em>Bônus</em>Plano das primeiras 72 horas</span><s>R$ 37</s></li>
+      <li class=b><span><em>Bônus</em>Diário de ocorrências</span><s>R$ 37</s></li>
+      <li class=b><span><em>Bônus</em>Histórias reais: 6 mulheres, como cada uma seguiu</span><s>R$ 37</s></li>
+      <li class=b><span><em>Bônus</em>Teste de 2 minutos: é DARVO ou conflito?</span><s>R$ 27</s></li>
+      <li class=b><span><em>Bônus</em>Contato Zero</span><s>R$ 47</s></li>
+    </ul>
+    <div class="ototal"><span>Valor total</span><s>R$ 449</s></div>
+    <div class="onow">Hoje, tudo isso por</div>
+    <div class="oprice">R$ 47</div>
+    <div class="ocmp">Acesso imediato · 10 minutos por dia</div>
+    <a class="cta" data-cta data-final href="#oferta">QUERO ME BLINDAR AGORA</a>
+    <div class="trust">
+      <span><svg class="i"><use href="#i-lock"/></svg>Compra segura</span>
+      <span><svg class="i"><use href="#i-zap"/></svg>Acesso imediato</span>
+      <span><svg class="i"><use href="#i-shield"/></svg>Garantia de 7 dias</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- GARANTIA -->
+<section class="band"><div class="wrap">
+  <div class="gstack">
+  <div class="garantia">
+    <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="#F0708F" stroke-width="2" stroke-dasharray="3 4"/>
+      <circle cx="50" cy="50" r="38" fill="#2C1D26" stroke="#F0708F" stroke-width="2"/>
+      <text x="50" y="49" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, sans-serif" font-weight="800" font-size="30" fill="#FBF8F5">7</text>
+      <text x="50" y="64" text-anchor="middle" font-family="Inter, Segoe UI, sans-serif" font-weight="700" font-size="9" letter-spacing="1" fill="#F0708F">DIAS</text>
+    </svg>
+    <div><span class="tag2">Garantia 1 · incondicional</span><h3>Garantia Decisão Informada</h3><p>Não estou te pedindo pra decidir hoje. Estou te pedindo uma decisão informada, e ela só dá pra tomar por dentro. Entra, faz a primeira semana. Se não fizer sentido, peça o reembolso em até 7 dias e devolvemos 100%. Sem perguntas.</p></div>
+  </div>
+  <div class="garantia">
+    <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="#F0708F" stroke-width="2" stroke-dasharray="3 4"/>
+      <circle cx="50" cy="50" r="38" fill="#2C1D26" stroke="#F0708F" stroke-width="2"/>
+      <text x="50" y="49" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, sans-serif" font-weight="800" font-size="30" fill="#FBF8F5">30</text>
+      <text x="50" y="64" text-anchor="middle" font-family="Inter, Segoe UI, sans-serif" font-weight="700" font-size="9" letter-spacing="1" fill="#F0708F">DIAS</text>
+    </svg>
+    <div><span class="tag2">Garantia 2 · até o 30º dia</span><h3>Garantia do Plano</h3><p>Fez as 4 semanas, preencheu o seu Plano de Blindagem e mesmo assim não sentiu diferença? Mande o plano preenchido até o 30º dia e devolvemos tudo.</p></div>
+  </div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="band alt"><div class="wrap">
+  <div class="eyebrow">Dúvidas frequentes</div>
+  <h2>Perguntas respondidas.</h2>
+  <details><summary>Não posso cortar contato. Serve pra mim?</summary><p>Foi feito pra isso. O Protocolo funciona sem cortar. O Contato Zero é só um bônus pra quem pode.</p></details>
+  <details><summary>Já faz muito tempo. Ainda adianta?</summary><p>Sim. Fortalecer e Blindar são etapas de depois: servem justamente pra quem já passou e continua remoendo.</p></details>
+  <details><summary>Não é desculpa pra eu não olhar meus erros?</summary><p>Não. O Protocolo separa manipulação de conflito em que as duas partes têm responsabilidade.</p></details>
+  <details><summary>Eu já entrego tudo a Deus. Preciso de método?</summary><p>Deus cuida do coração e te dá paz pra seguir. O Protocolo cuida do que você faz na próxima conversa. Uma coisa não substitui a outra.</p></details>
+  <details><summary>Me ajuda a juntar provas?</summary><p>Ensina a registrar do jeito certo e a reconhecer quando o caso é jurídico. Não substitui advogado.</p></details>
+  <details><summary>Substitui terapia?</summary><p>Não. É complemento.</p></details>
+  <details><summary>Quanto tempo eu preciso por dia?</summary><p>Uns 10 minutos. A sugestão é uma etapa por semana, com uma ação pequena por dia, mas você vai no seu ritmo. Se precisar se proteger agora, o Plano das 72 horas e as frases-escudo já estão lá.</p></details>
+  <details><summary>E se eu me arrepender?</summary><p>Você tem duas garantias. Até 7 dias, devolvemos 100% sem perguntas. E se você fizer as 4 semanas e preencher o seu Plano de Blindagem sem sentir diferença, pode pedir o reembolso até o 30º dia.</p></details>
+</div></section>
+
+<!-- A DECISAO E SUA -->
+<section class="band decisao"><div class="wrap center">
+  <div class="eyebrow">A decisão é sua</div>
+  <h2 style="margin-bottom:0">Daqui a 1 ano, se nada mudar:</h2>
+  <ul style="text-align:left">
+    <li><svg class="i"><use href="#i-x"/></svg>Você ainda estará se explicando pra quem não quer ouvir.</li>
+    <li><svg class="i"><use href="#i-x"/></svg>O roteiro terá voltado com outros personagens.</li>
+    <li><svg class="i"><use href="#i-x"/></svg>Você confiará menos em todos, e seus filhos sentirão.</li>
+  </ul>
+  <div class="big">A paz que você merece não vai cair do céu. Ela exige uma decisão.</div>
+  <a class="cta" data-cta data-final href="#oferta">QUERO ME BLINDAR AGORA</a>
+  <div class="ps"><b>P.S.</b> Você não controla o que dizem de você. Controla o quanto isso ainda manda em você.</div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>Ana Carolina Lira</p>
+  <p>Os resultados variam de pessoa para pessoa. Este produto não é afiliado ao Facebook ou ao Google.</p>
+  <p class="cvv">Se você está pensando em se machucar, ligue 188 (CVV, 24 horas) ou 192 (SAMU).</p>
+</div></footer>
+
+<!-- CTA FIXO -->
+<div class="sticky" id="sticky"><div class="in"><div><b>Protocolo Blindagem</b><span>R$ 47 · 10 min por dia</span></div><a class="cta" data-cta href="#oferta">Quero me blindar</a></div></div>
+
+<script>
+(function(){
+  document.querySelectorAll('img[data-from]').forEach(function(i){var o=document.querySelector(i.getAttribute('data-from'));if(o)i.src=o.src;});
+var CHECKOUT="https://pay.cakto.com.br/dutiy7w_1275569";
+  document.querySelectorAll('a[data-cta][data-final]').forEach(function(a){if(CHECKOUT)a.href=CHECKOUT;});
+  /* abas */
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});
+  });});
+  /* carrossel */
+  var car=document.getElementById('car'),dots=document.getElementById('cardots');
+  if(car){var f=car.children;for(var i=0;i<f.length;i++){dots.appendChild(document.createElement('i'));}
+    function upd(){var c=car.getBoundingClientRect(),best=0,d=1e9;for(var i=0;i<f.length;i++){var r=f[i].getBoundingClientRect(),x=Math.abs((r.left+r.width/2)-(c.left+c.width/2));if(x<d){d=x;best=i;}}
+      [].forEach.call(dots.children,function(e,i){e.classList.toggle('on',i===best);});}
+    car.addEventListener('scroll',upd,{passive:true});upd();}
+  /* barra fixa */
+  var st=document.getElementById('sticky'),hero=document.querySelector('.hero'),off=document.getElementById('oferta');
+  function s(){var y=window.scrollY||0,he=hero.offsetTop+hero.offsetHeight-120,r=off.getBoundingClientRect(),inO=r.top<window.innerHeight*0.6&&r.bottom>0;st.classList.toggle('show',y>he&&!inO);}
+  window.addEventListener('scroll',s,{passive:true});window.addEventListener('resize',s);s();
+})();
+</script>
+
+
+</body>
+</html>
