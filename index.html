@@ -425,7 +425,7 @@ footer .cvv{max-width:44ch;margin:12px auto 0}
 <!-- PARE DE SE CULPAR -->
 <section class="band alt"><div class="wrap">
   <div class="eyebrow">Pare de se culpar</div>
-  <h2>Quanto mais você tenta se defender, mais fundo afunda.</h2>
+  <h2>Quanto mais você tenta se defender, mais afunda.</h2>
   <div class="cards">
     <div class="card"><span class="ic"><svg class="i"><use href="#i-msg"/></svg></span><div><h3>Você se explica e piora</h3><p>Cada defesa vira munição.</p></div></div>
     <div class="card"><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span><div><h3>A versão deles chegou primeiro</h3><p>Quando você abriu a boca, a história já estava contada.</p></div></div>
@@ -680,7 +680,7 @@ footer .cvv{max-width:44ch;margin:12px auto 0}
 var CHECKOUT="https://pay.cakto.com.br/dutiy7w_1275569";
   document.querySelectorAll('a[data-cta][data-final]').forEach(function(a){if(CHECKOUT)a.href=CHECKOUT;});
   /* abas */
-  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var tabs=[].slice.call(document.querySelectorAll('button.tab'));
   tabs.forEach(function(t){t.addEventListener('click',function(){
     tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});
   });});
