@@ -1,0 +1,25 @@
+{
+  "images": {
+    "sizes": [
+      320,
+      480,
+      640,
+      828,
+      1080
+    ],
+    "qualities": [
+      70
+    ],
+    "formats": [
+      "image/avif",
+      "image/webp"
+    ],
+    "minimumCacheTTL": 2678400,
+    "localPatterns": [
+      {
+        "pathname": "^/.*\\.(jpg|png)$",
+        "search": ""
+      }
+    ]
+  }
+}
