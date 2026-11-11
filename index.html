@@ -189,6 +189,16 @@ em.r{font-style:normal;color:var(--rose)}
 .dom h3{font-size:16px;font-weight:600;line-height:1.25;margin-bottom:4px}
 .dom p{font-size:14px;line-height:1.4}
 
+/* beneficios */
+.benh{font-size:clamp(30px,8.4vw,44px);line-height:1.08;text-align:center;margin-bottom:22px}
+.bens{display:grid;gap:12px;grid-template-columns:1fr}
+.ben{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--rose-line);border-radius:14px;padding:18px 18px}
+.ben .i{width:20px;height:20px;flex:0 0 auto;color:var(--rose);margin-top:3px}
+.ben p{font-size:15.5px;line-height:1.55;color:var(--white-2);margin:0}
+.ben b{color:var(--white)}
+@media (min-width:760px){.bens{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.bens{grid-template-columns:repeat(3,1fr)}}
+
 /* bio */
 .bio{display:grid;gap:18px;justify-items:center;text-align:center}
 .bio .photo{width:150px;border-radius:20px;overflow:hidden;position:relative;box-shadow:0 14px 34px rgba(0,0,0,.4);border:1px solid var(--rose-line)}
@@ -540,15 +550,14 @@ footer .cvv{max-width:44ch;margin:12px auto 0}
 
 <!-- O QUE VOCE VAI DOMINAR -->
 <section class="band"><div class="wrap">
-  <div class="eyebrow">O que você vai dominar</div>
-  <h2>Ferramentas prontas pra usar já na próxima conversa.</h2>
-  <div class="grid2">
-    <div class="dom"><span class="ic"><svg class="i"><use href="#i-msg"/></svg></span><h3>A frase que corta o roteiro</h3><p>Responder sem dar munição.</p></div>
-    <div class="dom"><span class="ic"><svg class="i"><use href="#i-clip"/></svg></span><h3>O diário de ocorrências</h3><p>Registrar cada episódio em 5 minutos, e saber quando é caso jurídico.</p></div>
-    <div class="dom"><span class="ic"><svg class="i"><use href="#i-users"/></svg></span><h3>O detector de vínculo real</h3><p>Amiga de verdade ou curiosa de drama.</p></div>
-    <div class="dom"><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span><h3>As frases-escudo</h3><p>O que dizer a mãe, chefe, sócia, cunhada, grupo de mães.</p></div>
-    <div class="dom"><span class="ic"><svg class="i"><use href="#i-book"/></svg></span><h3>O diário Fato × Narrativa</h3><p>Separar o que aconteceu da história que contaram, e voltar a confiar em você.</p></div>
-    <div class="dom"><span class="ic"><svg class="i"><use href="#i-map"/></svg></span><h3>O mapa do roteiro</h3><p>Reconhecer cada fase quando ela começa.</p></div>
+  <h2 class="benh">O que você vai dominar</h2>
+  <div class="bens">
+    <div class="ben"><svg class="i"><use href="#i-check"/></svg><p><b>Parar de se culpar</b> — e entender, de uma vez, que o problema nunca foi você.</p></div>
+    <div class="ben"><svg class="i"><use href="#i-check"/></svg><p><b>Dormir em paz de novo</b> — sem repassar a conversa na cabeça às 3 da manhã.</p></div>
+    <div class="ben"><svg class="i"><use href="#i-check"/></svg><p><b>Responder sem virar a vilã</b> — falar só o necessário, com calma, e sair por cima.</p></div>
+    <div class="ben"><svg class="i"><use href="#i-check"/></svg><p><b>Encarar todo mundo de cabeça erguida</b> — no trabalho, na família ou na porta da escola.</p></div>
+    <div class="ben"><svg class="i"><use href="#i-check"/></svg><p><b>Saber em quem confiar</b> — separar quem está do seu lado de quem só quer o drama.</p></div>
+    <div class="ben"><svg class="i"><use href="#i-check"/></svg><p><b>Nunca mais ser pega de surpresa</b> — reconhecer o padrão antes de virar crise.</p></div>
   </div>
 </div></section>
 
